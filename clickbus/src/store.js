@@ -6,14 +6,9 @@ import { connectRoutes } from 'redux-first-router';
 import createHistory from 'history/createBrowserHistory';
 import { reducer as formReducer } from 'redux-form';
 import { combineReducers } from 'redux';
+import { routesMap } from './components/Switcher'
 
 const history = createHistory();
-
-const routesMap = {
-  HOME: '/',
-  RESULTS: '/results'
-}
-
 const { reducer, middleware, enhancer } = connectRoutes(history, routesMap);
 const rootReducer = combineReducers({...reducers, location: reducer, form: formReducer})
 

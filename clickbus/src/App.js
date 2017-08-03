@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import PageComponent from './PageComponent';
+import Switcher from './components/Switcher';
 import './App.css';
 
 export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <PageComponent/>
+        <Switcher/>
       </div>
     );
   }

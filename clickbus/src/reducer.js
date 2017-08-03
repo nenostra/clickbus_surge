@@ -1,31 +1,27 @@
 //import { NOT_FOUND } from 'redux-first-router'
 
 export const route = (state = [], action) => {
-  switch(action.type) {
+  const { type, payload } = action;
+  switch(type) {
     case 'FETCH_SUCCESS':
-      return action.response.items;
+      return payload.items;
     default: return state;
   }
-}
-
-export const place = (state = [], action) => {
-  switch(action.type) {
-    case 'RANDOM_FETCH_SUCCESS':
-      return action.response;
-    default: return state;
-  }
-}
+};
 
 export const page = (state = null, action) => {
-  switch(action.type) {
+  const { type } = action;
+  switch(type) {
     case 'HOME':
-       return 'homePage'
+      return 'homePage';
     case 'RESULTS':
-       return 'resultsPage'
+      return 'resultsPage';
+    case 'SEAT_MAP':
+      return 'seatMapPage';
     default:
       return state
   }
-}
+};
 
 /*export const locred = (state = null, action = {}) => {
   switch(action.type) {
